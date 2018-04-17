@@ -1,6 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600');
 // Variables
 @import "variables";
 
@@ -9,4 +10,111 @@
 
 html,body {
     font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+
+}
+.navbar {
+    color: #fff;
+    .navbar-nav {
+        .nav-link{
+            text-align: center;
+            padding: 1.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+        }
+        .router-link-active {
+
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 0;
+        .navbar-collapse {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-link {
+            position: relative;
+            &:hover{
+                &:after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 3px;
+                    left: 0;
+                    background-color: #61a4e2;
+                }
+            }
+        }
+        .router-link-active {
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                left: 0;
+                background-color: #61a4e2;
+            }
+        }
+    }
+}
+.navbar-logo {
+    display: none;
+    position: relative;
+    width: 100px;
+    img{
+        position: absolute;
+        top: -15px;
+    }
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+}
+
+.bg-darkgray {
+    background-color: #282828;
+}
+$color1:teal;
+.ss-style-doublediagonal {
+    z-index: 1;
+    padding-top: 6em;
+    background: darken($color1, 11%);
+}
+
+section {
+    position: relative;
+    padding: 10em ;
+    background: $color1;
+    color: #fff;
+    text-align: center;
+}
+
+.ss-style-doublediagonal::before,
+.ss-style-doublediagonal::after {
+    top: 0;
+    left: -25%;
+    z-index: -1;
+    width: 150%;
+    height: 75%;
+    background: inherit;
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.ss-style-doublediagonal::before {
+    height: 50%;
+    background: darken($color1, 15%);
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 3% 0;
+    transform-origin: 3% 0;
 }
