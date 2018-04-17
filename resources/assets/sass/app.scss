@@ -69,6 +69,7 @@ html,body {
     display: none;
     position: relative;
     width: 100px;
+    z-index: +1;
     img{
         position: absolute;
         top: -15px;
@@ -81,23 +82,19 @@ html,body {
 .bg-darkgray {
     background-color: #282828;
 }
-$color1:teal;
-.ss-style-doublediagonal {
-    z-index: 1;
-    padding-top: 6em;
-    background: darken($color1, 11%);
-}
 
-section {
+
+section.diagonal {
     position: relative;
     padding: 10em ;
-    background: $color1;
-    color: #fff;
-    text-align: center;
+    z-index: +1;
+    padding-top: 6em;
 }
 
-.ss-style-doublediagonal::before,
-.ss-style-doublediagonal::after {
+section.diagonal::before{
+    position: absolute;
+    content: '';
+    pointer-events: none;
     top: 0;
     left: -25%;
     z-index: -1;
@@ -110,11 +107,3 @@ section {
     transform-origin: 0 0;
 }
 
-.ss-style-doublediagonal::before {
-    height: 50%;
-    background: darken($color1, 15%);
-    -webkit-transform: rotate(-3deg);
-    transform: rotate(-3deg);
-    -webkit-transform-origin: 3% 0;
-    transform-origin: 3% 0;
-}

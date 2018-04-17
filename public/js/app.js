@@ -38780,7 +38780,7 @@ var staticRenderFns = [
         "div",
         {
           staticClass: "carousel slide",
-          attrs: { id: "carouselExampleSlidesOnly", "data-ride": "carousel" }
+          attrs: { id: "carousel", "data-ride": "carousel" }
         },
         [
           _c("div", { staticClass: "carousel-inner" }, [
@@ -38819,11 +38819,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "carousel-control-prev",
-              attrs: {
-                href: "#carouselExampleControls",
-                role: "button",
-                "data-slide": "prev"
-              }
+              attrs: { href: "#carousel", role: "button", "data-slide": "prev" }
             },
             [
               _c("span", {
@@ -38839,11 +38835,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "carousel-control-next",
-              attrs: {
-                href: "#carouselExampleControls",
-                role: "button",
-                "data-slide": "next"
-              }
+              attrs: { href: "#carousel", role: "button", "data-slide": "next" }
             },
             [
               _c("span", {
@@ -38857,7 +38849,7 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("section", { staticClass: "ss-style-doublediagonalr" }),
+      _c("section", { staticClass: "diagonal bg-dark" }),
       _vm._v(" "),
       _c("div", { staticClass: "container" })
     ])
@@ -50364,15 +50356,16 @@ module.exports = Vue;
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
+/* WEBPACK VAR INJECTION */(function(global) {var scope = self || window;
+var apply = Function.prototype.apply;
 
 // DOM APIs, for completeness
 
 exports.setTimeout = function() {
-  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+  return new Timeout(apply.call(setTimeout, scope, arguments), clearTimeout);
 };
 exports.setInterval = function() {
-  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+  return new Timeout(apply.call(setInterval, scope, arguments), clearInterval);
 };
 exports.clearTimeout =
 exports.clearInterval = function(timeout) {
@@ -50387,7 +50380,7 @@ function Timeout(id, clearFn) {
 }
 Timeout.prototype.unref = Timeout.prototype.ref = function() {};
 Timeout.prototype.close = function() {
-  this._clearFn.call(window, this._id);
+  this._clearFn.call(scope, this._id);
 };
 
 // Does not start the time, just sets up the members needed.

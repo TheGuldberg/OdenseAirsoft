@@ -10451,6 +10451,7 @@ body {
   display: none;
   position: relative;
   width: 100px;
+  z-index: +1;
 }
 
 .navbar-logo img {
@@ -10468,22 +10469,17 @@ body {
   background-color: #282828;
 }
 
-.ss-style-doublediagonal {
-  z-index: 1;
-  padding-top: 6em;
-  background: #004848;
-}
-
-section {
+section.diagonal {
   position: relative;
   padding: 10em;
-  background: teal;
-  color: #fff;
-  text-align: center;
+  z-index: +1;
+  padding-top: 6em;
 }
 
-.ss-style-doublediagonal::before,
-.ss-style-doublediagonal::after {
+section.diagonal::before {
+  position: absolute;
+  content: '';
+  pointer-events: none;
   top: 0;
   left: -25%;
   z-index: -1;
@@ -10494,14 +10490,5 @@ section {
   transform: rotate(-2deg);
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-}
-
-.ss-style-doublediagonal::before {
-  height: 50%;
-  background: #003434;
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  -webkit-transform-origin: 3% 0;
-  transform-origin: 3% 0;
 }
 
