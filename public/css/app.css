@@ -10391,6 +10391,23 @@ a.text-dark:focus {
 html,
 body {
   font-family: 'Open Sans', sans-serif;
+  color: #212121;
+  overflow-x: hidden;
+}
+
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  -webkit-transition: opacity .15s ease;
+  transition: opacity .15s ease;
+}
+
+.page-transition-leave-active {
+  -webkit-transition: opacity .15s ease;
+  transition: opacity .15s ease;
+  opacity: 0;
 }
 
 .navbar {
@@ -10456,7 +10473,7 @@ body {
 
 .navbar-logo img {
   position: absolute;
-  top: -15px;
+  top: -32px;
 }
 
 @media (min-width: 992px) {
@@ -10471,9 +10488,9 @@ body {
 
 section.diagonal {
   position: relative;
-  padding: 10em;
+  padding: 4em 0;
   z-index: +1;
-  padding-top: 6em;
+  background-size: cover;
 }
 
 section.diagonal::before {
@@ -10485,6 +10502,7 @@ section.diagonal::before {
   z-index: -1;
   width: 150%;
   height: 75%;
+  min-height: 100px;
   background: inherit;
   -webkit-transform: rotate(-2deg);
   transform: rotate(-2deg);

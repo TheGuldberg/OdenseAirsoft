@@ -1,6 +1,5 @@
 
-require('./bootstrap');
-
+import "./bootstrap";
 import VueRouter from 'vue-router';
 
 import Home from './components/Home.vue';

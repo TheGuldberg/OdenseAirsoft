@@ -10,11 +10,25 @@
 
 html,body {
     font-family: 'Open Sans', sans-serif;
+    color: #212121;
+    overflow-x: hidden;
 }
 
-.container {
-
+.page-transition-enter {
+    opacity: 0;
 }
+
+.page-transition-enter-active {
+    transition: opacity .15s ease;
+}
+
+.page-transition-leave {}
+
+.page-transition-leave-active {
+    transition: opacity .15s ease;
+    opacity: 0;
+}
+
 .navbar {
     color: #fff;
     .navbar-nav {
@@ -72,7 +86,7 @@ html,body {
     z-index: +1;
     img{
         position: absolute;
-        top: -15px;
+        top: -32px;
     }
     @include media-breakpoint-up(lg) {
         display: block;
@@ -86,9 +100,9 @@ html,body {
 
 section.diagonal {
     position: relative;
-    padding: 10em ;
+    padding: 4em 0 ;
     z-index: +1;
-    padding-top: 6em;
+    background-size: cover;
 }
 
 section.diagonal::before{
@@ -100,6 +114,7 @@ section.diagonal::before{
     z-index: -1;
     width: 150%;
     height: 75%;
+    min-height: 100px;
     background: inherit;
     -webkit-transform: rotate(-2deg);
     transform: rotate(-2deg);

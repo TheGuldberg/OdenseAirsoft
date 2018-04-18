@@ -2,14 +2,8 @@
     <div>
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://source.unsplash.com/1600x500/?airsoft" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://source.unsplash.com/1600x500/?airsoft" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://source.unsplash.com/1600x500/?airsoft" alt="Third slide">
+                <div class="carousel-item" v-for="(slide, index) in slides" :class="{ 'active': index == 0 }">
+                    <img class="d-block w-100" :src="slide.url" :alt="slide.alt">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
@@ -22,10 +16,26 @@
             </a>
         </div>
         <section class="diagonal bg-dark">
-
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="card bg-gray">
+                            <div class="card-body text-center">
+                                <b>placeholder</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <b>placeholder</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <div class="container">
-        </div>
+        
     </div>
 </template>
 
@@ -33,7 +43,10 @@
 export default {
     data: function() {
         return {
-            test: '',
+            slides: [
+                {id: 0, url: 'https://images.unsplash.com/photo-1515871434414-dc3f0a54986f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=d780966cfdcb1f5e5e828812aeb03669', alt: 'First slide'},
+                {id: 1, url: 'https://images.unsplash.com/photo-1521725168367-2f46504f075e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=53dfd38e21707f6e0049786b41e09eaf', alt: 'Second slide'},
+            ]
         }
     },
     components: {
