@@ -2,13 +2,15 @@
 import "./bootstrap";
 import VueRouter from 'vue-router';
 
-import Home from './components/Home.vue';
-import Information from './components/Information.vue';
-import News from './components/News.vue';
-import Gallery from './components/Gallery.vue';
-import Membership from './components/Membership.vue';
-import Calendar from './components/Calendar.vue';
-import Contact from './components/Contact.vue';
+import anime from 'animejs'
+
+import Home from './pages/Home.vue';
+import Information from './pages/Information.vue';
+import News from './pages/News.vue';
+import Gallery from './pages/Gallery.vue';
+import Membership from './pages/Membership.vue';
+import Calendar from './pages/Calendar.vue';
+import Contact from './pages/Contact.vue';
 
 window.Vue = require('vue');
 

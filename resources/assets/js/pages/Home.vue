@@ -1,21 +1,11 @@
 <template>
     <div>
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item" v-for="(slide, index) in slides" :class="{ 'active': index == 0 }">
-                    <img class="d-block w-100" :src="slide.url" :alt="slide.alt">
-                </div>
+        <hero-slider>
+            <div v-for="slide in slides" class="slide">
+                <img :src="slide.url" :alt="slide.alt">
             </div>
-            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        <section class="diagonal bg-dark">
+        </hero-slider>
+        <section class="diagonal double bg-dark">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col">
@@ -35,11 +25,12 @@
                 </div>
             </div>
         </section>
-        
     </div>
 </template>
-
 <script>
+
+import HeroSlider from '../components/HeroSlider.vue';
+
 export default {
     data: function() {
         return {
@@ -50,7 +41,7 @@ export default {
         }
     },
     components: {
-
+        'hero-slider': HeroSlider,
     }
 }
 </script>

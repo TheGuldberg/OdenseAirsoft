@@ -10388,11 +10388,15 @@ a.text-dark:focus {
   }
 }
 
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 html,
 body {
   font-family: 'Open Sans', sans-serif;
   color: #212121;
-  overflow-x: hidden;
 }
 
 .page-transition-enter {
@@ -10498,6 +10502,23 @@ section.diagonal::before {
   content: '';
   pointer-events: none;
   top: 0;
+  left: -25%;
+  z-index: -1;
+  width: 150%;
+  height: 75%;
+  min-height: 100px;
+  background: inherit;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+section.diagonal.double::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  bottom: -83px;
   left: -25%;
   z-index: -1;
   width: 150%;
