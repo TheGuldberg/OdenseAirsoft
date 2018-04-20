@@ -1,10 +1,10 @@
 <template>
     <div>
-        <hero-slider>
-            <div v-for="slide in slides" class="slide">
+        <div class="slider">
+            <div v-for="slide in slides" v-bind:key="slide.id">
                 <img :src="slide.url" :alt="slide.alt">
             </div>
-        </hero-slider>
+        </div>
         <section class="diagonal double bg-dark">
             <div class="container">
                 <div class="row justify-content-center">
@@ -29,8 +29,6 @@
 </template>
 <script>
 
-import HeroSlider from '../components/HeroSlider.vue';
-
 export default {
     data: function() {
         return {
@@ -39,9 +37,6 @@ export default {
                 {id: 1, url: 'https://images.unsplash.com/photo-1521725168367-2f46504f075e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=500&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=53dfd38e21707f6e0049786b41e09eaf', alt: 'Second slide'},
             ]
         }
-    },
-    components: {
-        'hero-slider': HeroSlider,
     }
 }
 </script>

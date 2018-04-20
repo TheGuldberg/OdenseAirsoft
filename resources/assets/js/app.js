@@ -3,6 +3,7 @@ import "./bootstrap";
 import VueRouter from 'vue-router';
 
 import anime from 'animejs'
+import 'bxslider';
 
 import Home from './pages/Home.vue';
 import Information from './pages/Information.vue';
@@ -29,3 +30,13 @@ const routes = [
 const router = new VueRouter({mode: 'history', routes});
 
 const app = new Vue({el: '#app', router});
+
+$('.slider').bxSlider({
+    keyboardEnabled: true,
+    auto: true,
+    nextText: '<i class="fas fa-chevron-circle-right"></i>',
+    prevText: '<i class="fas fa-chevron-circle-left"></i>',
+    buildPager: (index) => {     
+        return '<i class="fas fa-circle"></i>'
+    }
+});

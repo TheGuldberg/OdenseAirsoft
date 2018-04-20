@@ -1,0 +1,55 @@
+
+.bx-wrapper{
+    position: relative;
+    .bx-controls.bx-has-controls-direction.bx-has-pager {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        a {
+            color: white;
+        }
+
+        .bx-controls-direction {
+            align-self: stretch;
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem;
+            
+            .bx-prev, .bx-next{
+                pointer-events: all;
+                transition: all .333s ease-in-out;
+                font-size: 2rem;
+                opacity: .7;
+                &:hover{
+                    color: $blue;
+                }
+            }
+        }
+
+        .bx-pager {
+            pointer-events: all;
+            position: absolute;
+            bottom: 3rem;
+            .bx-pager-item {
+                float: left;
+                margin: .5rem;
+                .bx-pager-link {
+                    transition: all .333s ease-in-out;
+                    opacity: .7;
+                    &.active{
+                        color: $blue;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}       
